@@ -1,0 +1,18 @@
+#include<stdio.h> 
+#include<graphics.h> 
+#include<conio.h> 
+#include<dos.h> 
+#define G 420 
+void main(){ 
+int gd=DETECT,gm,y=0,v=10; 
+initgraph(&gd,&gm,"C:\\TURBOC3\\BGI"); 
+while(!kbhit()){ 
+cleardevice(); 
+line(0,G,getmaxx(),G); 
+circle(50,y,20); 
+y+=v; 
+if(y>=G-20||y<=0) v=-v; 
+delay(50); 
+} 
+closegraph(); 
+} 
